@@ -24,7 +24,7 @@ def crc8(a):
     # try to open serial port
     
 port='/dev/serial0'
-sys.stderr.write('Trying port %sn' % port)
+sys.stderr.write('Trying port %s\n' % port)
             
 try:
     # try to read a line of data from the serial port and parse    
@@ -33,6 +33,7 @@ try:
         result=ser.write("xffx01x86x00x00x00x00x00x79")
         time.sleep(0.1)
         s=ser.read(9)
+	print(s)
         z=bytearray(s)
         # Calculate crc
         crc=crc8(s) 
