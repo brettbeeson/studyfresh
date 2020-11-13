@@ -34,7 +34,8 @@ def create_ccs811(verbose = False):
     # Mode 1 = read every 1s, constant heat (more accurate?)
     # Mode 2 = every 10s, pulse heat 
     # Mode 3 = every 60s, pulse heat
-    new_ccs811.set_drive_mode  (1)
+    #new_ccs811.set_drive_mode  (1)
+    new_ccs811.set_drive_mode  (2)
     return new_ccs811
     
 
@@ -61,7 +62,7 @@ if __name__ == '__main__':
         # Command line arguments
         parser = argparse.ArgumentParser(description="Read the CCS881 CO2, temperature compensating with a BME280")
         parser.add_argument("-v","--verbose", action='store_true', help="Display verbose output")
-        parser.add_argument("-s", type=int,default=None, help="Seconds between readings - implies continuous running")
+        parser.add_argument("-s", type=int,default=0, help="Seconds between readings - implies continuous running")
         parser.add_argument("-t", action='store_true', help="Print title row")
         args = parser.parse_args()
         
@@ -99,19 +100,19 @@ if __name__ == '__main__':
                 co2, tvoc = sample_ccs811(rh, temp)
                 co2_mhz, temp_mhz = sample_mh_z19()
                 # output
-                print(f"{sample_time.replace(microsecond=0).isoformat()},{co2},{co2_mhz},{rh:.0f},{temp:.1f},{temp_mhz:.1f}", flush=True)
+                print(f"{sample_time.replace(microsecond=0).isoformat()},{co2},{co2_mhz},{temp:.1f},{temp_mhz:.1f}", flush=True)
                 # exit if in single-reading mode
-                if not args.s:
+                if args.s == 0:
                     sys.exit(0)
 
                 n_errors = 0
             except Exception as ex:
                 n_errors += 1
-                if n_errors > 3:
+                if n_errors > 10:
                     raise
                 else:
                     # skip this reading and retry
-                    print (f"{ex}. Retrying {n_errors}/3.", file=sys.stderr)          
+                    print (f"{ex}. Retrying {n_errors}/10.", file=sys.stderr)          
         
     except KeyboardInterrupt as ex:
         print (ex)
