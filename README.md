@@ -41,4 +41,5 @@ enable_uart=1
 ```
 use ```raspi-config``` to disable use of primary uart by the login shell
 
-![CO2](https://github.com/brettbeeson/studyfresh/blob/main/co2.pdf)
+![CO2](https://github.com/brettbeeson/studyfresh/blob/main/co2.png)
+![Temperature](https://github.com/brettbeeson/studyfresh/blob/main/temperature.png)
