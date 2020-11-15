@@ -13,11 +13,11 @@ The following cheap (<$100) sensors were tested: CCS811, MH-Z19B. They were test
 
 ## CCS 811 CO2
 ### Background
-- Resources at  [Adafruit] (https://learn.adafruit.com/adafruit-ccs811-air-quality-sensor)
+- Resources at  [Adafruit](https://learn.adafruit.com/adafruit-ccs811-air-quality-sensor)
 - Library used was [Python API](https://qwiic-ccs811-py.readthedocs.io/en/latest/apiref.html)
-- There is reportedly (SparkFun) inaccurate due to heating on the combo board
-- [Comparative review] (https://www.jaredwolff.com/finding-the-best-tvoc-sensor-ccs811-vs-bme680-vs-sgp30/)
-- [The BME280] (https://cdn.sparkfun.com/assets/learn_tutorials/4/1/9/BST-BME280_DS001-10.pdf) is used on the combo board to compensate for temperature and humidity.
+- There is reportedly (SparkFun forum) inaccurate and bme280 misread due to heating on the combo board.
+- [Comparative review](https://www.jaredwolff.com/finding-the-best-tvoc-sensor-ccs811-vs-bme680-vs-sgp30/)
+- [The BME280](https://cdn.sparkfun.com/assets/learn_tutorials/4/1/9/BST-BME280_DS001-10.pdf) is used on the combo board to compensate for temperature and humidity.
 - 48 burnin required, then 20 minutes for new mode start, before good readings availabel
 ### Setup and results
 - The Sparkfun "Environmental Combo" board was tested over a few days using "Mode 1" (continuous heating) and "Mode 2" (pulse heating)
@@ -27,7 +27,7 @@ The following cheap (<$100) sensors were tested: CCS811, MH-Z19B. They were test
 
 ## MH-Z19B
 ### Background
-- Used the [Python library MZ-Z19] (https://github.com/UedaTakeyuki/mh-z19) which will correctly setup uart (manual method is below). Follow instructions.
+- Used the [Python library MZ-Z19](https://github.com/UedaTakeyuki/mh-z19) which will correctly setup uart (manual method is below). Follow instructions on library.
 ### Setup and results
 - Connected to UART 
 - Good results (see temperature and CO2 graphs) compared to the 'assumed good' Extech sensors.
@@ -36,7 +36,7 @@ The following cheap (<$100) sensors were tested: CCS811, MH-Z19B. They were test
 - Occasional read error - so this repo's software includes some retry functionality
 
 ### Background: Manual setup of UART On Raspi 3B
-- [Setup uart] (https://www.raspberrypi.org/documentation/configuration/uart.md) : note it varies by Raspi Model
+- [Setup uart](https://www.raspberrypi.org/documentation/configuration/uart.md) : note it varies by Raspi Model
 - On Rpi 3B
 - - UART0 is secondary (used for bluetooth). On /dev/serial1 (aka /dev/ttyAMA0)
 -- UART1 is primary ("miniUART") and is *disabled by default*. On /dev/serial0 (aka /dev/ttyS0)
