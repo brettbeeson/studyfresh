@@ -4,7 +4,12 @@ The Citizen Science project for Air Quality.
 
 ## Comparing CO2 sensors
 
-The following cheap (<$100) sensors were tested: CCS811, MH-Z19B. They were tested against assumed-good industrial Extech CO2 and temperature units.
+
+The following cheap (<$100) sensors were tested: CCS811, MH-Z19B. They were tested against assumed-good industrial Extech CO2 and temperature units. The results in charts are below, with details following them.
+
+![CO2](https://github.com/brettbeeson/studyfresh/blob/main/CO2.png)
+![Temperature](https://github.com/brettbeeson/studyfresh/blob/main/temperature.png)
+
 
 ## CCS 811 CO2
 ### Background
@@ -40,6 +45,3 @@ The following cheap (<$100) sensors were tested: CCS811, MH-Z19B. They were test
 enable_uart=1
 ```
 use ```raspi-config``` to disable use of primary uart by the login shell
-
-![CO2](https://github.com/brettbeeson/studyfresh/blob/main/co2.png)
-![Temperature](https://github.com/brettbeeson/studyfresh/blob/main/temperature.png)
