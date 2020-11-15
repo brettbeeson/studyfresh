@@ -5,7 +5,7 @@ The Citizen Science project for Air Quality.
 ## Comparing CO2 sensors
 
 
-The following cheap (<$100) sensors were tested: CCS811, MH-Z19B. They were tested against assumed-good industrial Extech CO2 and temperature units. The results in charts are below, with details following them.
+The following cheap (<$100) sensors were tested: CCS811, MH-Z19B. They were tested against two assumed-good industrial Extech CO2 and temperature units. The results in charts are below, with details following them. The charts cover 4 days in a small room with intermittent occupation and ventilation.
 
 ![CO2](https://github.com/brettbeeson/studyfresh/blob/main/CO2.png)
 ![Temperature](https://github.com/brettbeeson/studyfresh/blob/main/temperature.png)
