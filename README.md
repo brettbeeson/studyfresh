@@ -45,3 +45,17 @@ The following cheap (<$100) sensors were tested: CCS811, MH-Z19B. They were test
 enable_uart=1
 ```
 use ```raspi-config``` to disable use of primary uart by the login shell
+
+## Comparing Temperature and Humidity Sensors
+
+No work done here, just some references.
+[Selection Guide](https://www.dfrobot.com/blog-695.html) compares BME280, LM35, DS18B20, SHT71
+[Humidty](https://www.kandrsmith.org/RJS/Misc/Hygrometers/calib_many.html#commentary)  BME280 is best.
+[Humidity and Temperature Test](https://www.youtube.com/watch?v=ynNeiFEJnrA) BME280 (good), HDC1080 (better)
+### Cheap options $5-$10
+- BME280 is good arounder. Possible self-heating. Good RH.
+- HDC1080 is slightly better.
+### Expensive options (Sensirion) $50-$100
+- SHT71 is much more expensive and out of date. 
+- [SHT85] might be good - probably best for long term. [https://www.sensirion.com/en/environmental-sensors/humidity-sensors/sht85-pin-type-humidity-sensor-enabling-easy-replaceability/]
+- The [SCD30](https://www.sensirion.com/en/environmental-sensors/carbon-dioxide-sensors/carbon-dioxide-sensors-co2/) does temperature, humidity and CO2. Untested but looks good.
